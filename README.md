@@ -3,6 +3,8 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
+[ ![Codeship Status for dschmura/questlove](https://app.codeship.com/projects/d5f91dd0-adc0-0134-bab6-42bf2211c7d1/status?branch=master)](https://app.codeship.com/projects/192563)
+
 Things you may want to cover:
 
 * Ruby version
