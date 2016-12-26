@@ -65,16 +65,11 @@ GEM
       capistrano (~> 3.1)
       sshkit (~> 1.2)
     capistrano-harrow (0.5.3)
-    capistrano-passenger (0.2.0)
-      capistrano (~> 3.0)
     capistrano-postgresql (4.2.1)
       capistrano (>= 3.0)
     capistrano-rails (1.2.1)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
-    capistrano-rvm (0.1.2)
-      capistrano (~> 3.0)
-      sshkit (~> 1.2)
     capybara (2.11.0)
       addressable
       mime-types (>= 1.16)
@@ -267,10 +262,8 @@ DEPENDENCIES
   bitters
   bourbon
   byebug
-  capistrano-passenger
   capistrano-postgresql (~> 4.2.0)
   capistrano-rails
-  capistrano-rvm
   capybara
   coffee-rails (~> 4.2)
   database_cleaner
@@ -290,7 +283,7 @@ DEPENDENCIES
   rspec-rails (~> 3.5.0)
   sass-rails (~> 5.0)
   selenium-webdriver
-  shoulda-matchers
+  shoulda-matchers (~> 3.1)
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)

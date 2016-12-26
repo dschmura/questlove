@@ -65,7 +65,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'shoulda-matchers', require: false
+  gem 'shoulda-matchers', '~> 3.1'
   gem 'ffaker'
   gem 'capybara'
   gem 'database_cleaner'
@@ -75,7 +75,5 @@ end
 group :development do
   gem 'capistrano-rails'
   gem 'capistrano-postgresql', '~> 4.2.0'
-  gem 'capistrano-rvm'
-  gem 'capistrano-passenger'
   gem 'erb2haml'
 end
