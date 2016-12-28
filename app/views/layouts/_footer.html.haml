@@ -1,7 +1,15 @@
-
+/ FOOTER
 %footer
-  %nav
-    %ul 
-      %li 
-      %li
-      %li
+  %p.float-xs-right
+    %a{:href => "#content"} Back to top
+  %p
+    © 2016 Humble Daisy, Inc
+    %a{:href => "#"} Privacy
+    ·
+    %a{:href => "#"} Terms
+
+  %hr
+    %ul
+      Temporary links
+      %li= link_to "Questions", questions_path
+      %li= link_to "Panels", questions_path
