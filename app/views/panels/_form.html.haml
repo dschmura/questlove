@@ -17,7 +17,7 @@
     = f.text_area :rules
   .field
     = f.label :moderator
-    = f.collection_select:moderator, @users.order(:email), :id, :email,   {:prompt => "Who shall be the moderator?"},  {:class => "form-control input-sm classroom_building_id", style: "width: 60%;"}
+    = f.collection_select:moderator, @users.order(:email), :id, :email,   {:prompt => "Who shall be the moderator?"},  {:class => "form-control input-sm "}
       
   .actions
     = f.submit 'Save'

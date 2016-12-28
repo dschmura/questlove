@@ -10,7 +10,7 @@ RSpec.describe "panels/edit", type: :view do
     ))
   end
 
-  it "renders the edit panel form" do
+  xit "renders the edit panel form" do
     render
 
     assert_select "form[action=?][method=?]", panel_path(@panel), "post" do

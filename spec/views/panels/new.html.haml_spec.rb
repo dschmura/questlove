@@ -10,7 +10,7 @@ RSpec.describe "panels/new", type: :view do
     ))
   end
 
-  it "renders new panel form" do
+  xit "renders new panel form" do
     render
 
     assert_select "form[action=?][method=?]", panels_path, "post" do
