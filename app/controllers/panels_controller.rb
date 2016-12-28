@@ -20,6 +20,7 @@ class PanelsController < ApplicationController
 
   # GET /panels/1/edit
   def edit
+    @users = User.all
   end
 
   # POST /panels
