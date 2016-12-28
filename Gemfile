@@ -54,8 +54,12 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'haml-rails'
 gem 'bourbon'
-gem 'neat', '~> 1.8'
 gem 'bitters'
+gem 'bootstrap', '~> 4.0.0.alpha5'
+# Bootstrap Tooltips and popovers depend on tether for positioning. If you use them, add tether to the Gemfile:
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.1.0'
+end
 gem 'normalize-rails'
 gem 'font-awesome-rails'
 gem 'devise'

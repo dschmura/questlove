@@ -17,9 +17,10 @@
 @charset 'utf-8';
   
 @import 'normalize-rails';
-  
-@import 'bourbon';
-  
-@import 'neat';
-  
-@import 'base/base';
+@import "bourbon";
+@import "font-awesome";
+@import "custom";
+
+// Custom bootstrap variables must be set or imported before bootstrap itself.
+@import "bootstrap";
+
