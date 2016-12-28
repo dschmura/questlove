@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe "panels/new", type: :view do
   before(:each) do
     assign(:panel, Panel.new(
-      :name => "MyString",
-      :description => "MyText",
-      :rules => "MyText",
+      :name => "Panel Title",
+      :description => "Panel Description",
+      :rules => "Panel Question Rules",
       :moderator => 1
     ))
   end
