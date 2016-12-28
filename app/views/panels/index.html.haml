@@ -1,0 +1,27 @@
+%h1 Listing panels
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Description
+      %th Rules
+      %th Moderator
+      %th
+      %th
+      %th
+
+  %tbody
+    - @panels.each do |panel|
+      %tr
+        %td= panel.name
+        %td= panel.description
+        %td= panel.rules
+        %td= panel.moderator
+        %td= link_to 'Show', panel
+        %td= link_to 'Edit', edit_panel_path(panel)
+        %td= link_to 'Destroy', panel, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Panel', new_panel_path
