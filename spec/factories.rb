@@ -7,9 +7,11 @@ FactoryGirl.define do
   end
   factory :question do
     question "MyString"
-    user nil
+    user 1
   end
   factory :user do
-    
+    email 'attendee@user.com'
+    password 'password'
+    pasword_confirmation 'password'
   end
 end
