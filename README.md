@@ -20,6 +20,20 @@ rake db:create
 * Database initialization
 rake db:migrate
 
+* Database seeding
+rake db:seed
+
+The database is seeded with 
+
+Users:  
+  - dschmura
+  - attendee
+  - moderator
+  - presenter
+
+Questions: 
+  20 beloning to attendee
+
 * How to run the test suite
 rspec (**may show deprication warnings with Ruby 2.4.0)
 RUBYOPT="-W0" rspec (run rspec while supressing ruby deprication warnings)
