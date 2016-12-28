@@ -8,6 +8,7 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body{:class => controller.controller_name}
     = render 'layouts/header'
+    = render 'layouts/alerts'
     .content#content
     = yield
     = render 'layouts/footer'

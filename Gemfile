@@ -58,6 +58,7 @@ gem 'neat', '~> 1.8'
 gem 'bitters'
 gem 'normalize-rails'
 gem 'font-awesome-rails'
+gem 'devise'
 group :development, :test do
   gem 'rspec-rails', '~>3.5.0'
   gem 'factory_girl_rails'
