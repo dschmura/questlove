@@ -1,0 +1,13 @@
+%p#notice= notice
+
+%p
+  %b Question:
+  = @question.question
+  %hr
+  %b Price:
+  = rating_for @question, 'price'
+  = rating_for @question, 'price',  disable_after_rate: true, imdb_avg: true
+
+= link_to 'Edit', edit_question_path(@question)
+\|
+= link_to 'Back', questions_path
