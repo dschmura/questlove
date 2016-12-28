@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @panel.name
+%p
+  %b Description:
+  = @panel.description
+%p
+  %b Rules:
+  = @panel.rules
+%p
+  %b Moderator:
+  = @panel.moderator
+
+= link_to 'Edit', edit_panel_path(@panel)
+\|
+= link_to 'Back', panels_path

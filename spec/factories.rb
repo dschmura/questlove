@@ -1,9 +1,17 @@
 FactoryGirl.define do
+  factory :panel do
+    name "MyString"
+    description "MyText"
+    rules "MyText"
+    moderator 1
+  end
   factory :question do
     question "MyString"
-    user nil
+    user 1
   end
   factory :user do
-    
+    email 'attendee@user.com'
+    password 'password'
+    pasword_confirmation 'password'
   end
 end
