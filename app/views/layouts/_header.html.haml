@@ -5,14 +5,15 @@
       %ul.nav.navbar-nav
         %li.nav-item.active
           %a.nav-link{:href => "#"} Home
-        %li.nav-item= link_to "About", pages_about_path
-        %li.nav-item= link_to "Contact Us", pages_contact_path
-        %li.nav-item= link_to "Privacy", pages_privacy_path
-      - if user_signed_in?
-        %li
-          = link_to("Logout #{current_user.email}", destroy_user_session_path, :method => :delete)
-      - else
-        %li
-          = link_to('Login', new_user_session_path)
+        .flex-items-xs-right
+          %li.nav-item= link_to "About", pages_about_path
+          %li.nav-item= link_to "Contact Us", pages_contact_path
+          %li.nav-item= link_to "Privacy", pages_privacy_path
+        - if user_signed_in?
+          %li
+            = link_to("Logout #{current_user.email}", destroy_user_session_path, :method => :delete)
+        - else
+          %li
+            = link_to('Login', new_user_session_path)
     / /.container
 

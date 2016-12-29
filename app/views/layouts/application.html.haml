@@ -9,6 +9,6 @@
   %body{:class => controller.controller_name}
     = render 'layouts/header'
     = flash_messages
-    .content#content
-    = yield
+    .content#content.container
+      = yield
     = render 'layouts/footer'

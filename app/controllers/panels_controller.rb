@@ -5,11 +5,14 @@ class PanelsController < ApplicationController
   # GET /panels.json
   def index
     @panels = Panel.all
+    @users = User.all
   end
 
   # GET /panels/1
   # GET /panels/1.json
   def show
+    @users = User.all
+    @question = Question.new
   end
 
   # GET /panels/new

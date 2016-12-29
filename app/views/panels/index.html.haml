@@ -1,27 +1,35 @@
-%h1 Listing panels
+.container
+  %h1 Listing panels
 
-%table
-  %thead
-    %tr
-      %th Name
-      %th Description
-      %th Rules
-      %th Moderator
-      %th
-      %th
-      %th
-
-  %tbody
-    - @panels.each do |panel|
+  %table.table.table-striped
+    %thead
       %tr
-        %td= panel.name
-        %td= panel.description
-        %td= panel.rules
-        %td= panel.moderator
-        %td= link_to 'Show', panel
-        %td= link_to 'Edit', edit_panel_path(panel)
-        %td= link_to 'Destroy', panel, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %th Name
+        %th Description
 
-%br
+        %th Moderator
+        %th
+        - if user_signed_in?
+          %th
+          %th
+          %th
 
-= link_to 'New Panel', new_panel_path
+    %tbody
+      - @panels.each do |panel|
+        %tr
+          %td= panel.name
+          %td= panel.description
+
+          %td= panel.moderator
+          %th.flex-items-xs-middle
+            = link_to "Load Panel", panel, class: 'btn btn-info' 
+          - if user_signed_in? 
+            - if current_user.email == 'moderator@user.com'
+              %td= link_to 'Show', panel
+              %td= link_to 'Edit', edit_panel_path(panel)
+              %td= link_to 'Destroy', panel, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+  %br
+
+  = link_to 'New Panel', new_panel_path
+
