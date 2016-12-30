@@ -1,16 +1,17 @@
 # == Schema Information
 #
-# Table name: panels
+# Table name: panel_questions
 #
 #  id          :integer          not null, primary key
-#  name        :string
-#  description :text
-#  rules       :text
-#  moderator   :integer
+#  panel_id    :integer
+#  question_id :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
 
-class Panel < ApplicationRecord
-  has_many :panel_questions
+class PanelQuestion < ApplicationRecord
+  belongs_to :panel
+  belongs_to :question
+
+  
 end
