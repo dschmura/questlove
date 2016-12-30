@@ -12,4 +12,5 @@
 #
 
 class Panel < ApplicationRecord
+  has_many :panel_questions
 end

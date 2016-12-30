@@ -12,4 +12,6 @@
 class PanelQuestion < ApplicationRecord
   belongs_to :panel
   belongs_to :question
+
+  
 end

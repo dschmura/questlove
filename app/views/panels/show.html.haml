@@ -32,13 +32,22 @@
 .row
   .pending_questions.col-xs
     List of questions PENDING
-    -# - @questions.each do |q|
-    -#   = q.question
+    %ul
+    - @pending_questions.each do |q|
+      %li= q.question
   .approved_questions.col-xs
     List of questions approved by the moderator
+    %ul
+    - @approved_questions.each do |q|
+      %li= q.question
   
-
+.row
+  .answered_questions.col-xs
+    %ul
+    - @answered_questions.each do |q|
+      %li= q.question
 = link_to 'Edit', edit_panel_path(@panel)
 \|
 = link_to 'Back', panels_path
 
+= console
