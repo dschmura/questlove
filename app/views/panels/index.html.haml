@@ -20,11 +20,11 @@
           %td= panel.name
           %td= panel.description
 
-          %td= panel.moderator
+          %td= panel.moderator_name(panel.moderator)
           %th.flex-items-xs-middle
             = link_to "Load Panel", panel, class: 'btn btn-info' 
           - if user_signed_in? 
-            - if current_user.email == 'moderator@user.com'
+            - if current_user.id == panel.moderator
               %td= link_to 'Show', panel
               %td= link_to 'Edit', edit_panel_path(panel)
               %td= link_to 'Destroy', panel, :method => :delete, :data => { :confirm => 'Are you sure?' }
