@@ -12,6 +12,7 @@
 #
 
 class Panel < ApplicationRecord
+  validates :name, :description, :moderator,  presence: true
   def moderator_name(moderator_id)
     User.find_by(id: moderator_id).user_name
   end
