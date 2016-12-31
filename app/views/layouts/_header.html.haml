@@ -8,7 +8,7 @@
         .flex-items-xs-right
           %li.nav-item= link_to "About", pages_about_path
           %li.nav-item= link_to "Contact Us", pages_contact_path
-          %li.nav-item= link_to "Privacy", pages_privacy_path
+
         - if user_signed_in?
           %li
             = link_to("Logout #{current_user.user_name}", destroy_user_session_path, :method => :delete)
