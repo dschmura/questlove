@@ -7,7 +7,7 @@ FactoryGirl.define do
   end
   factory :question do
     question "MyString"
-    user 1
+    association :user, factory: :user
     status 'pending'
   end
   factory :user do
