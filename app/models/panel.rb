@@ -12,4 +12,7 @@
 #
 
 class Panel < ApplicationRecord
+  def moderator_name(moderator_id)
+    User.find_by(id: moderator_id).user_name
+  end
 end
