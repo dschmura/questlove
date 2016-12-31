@@ -8,6 +8,7 @@ FactoryGirl.define do
   factory :question do
     question "MyString"
     user 1
+    status 'pending'
   end
   factory :user do
     email 'attendee@user.com'
