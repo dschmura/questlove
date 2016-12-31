@@ -1,6 +1,6 @@
 class PanelsController < ApplicationController
   before_action :set_panel, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /panels
   # GET /panels.json
   def index
