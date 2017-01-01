@@ -1,0 +1,10 @@
+.card
+  .card-block
+    .row
+      .col-md-12
+        %p.card-text
+          %span.text-muted
+            = question.user.user_name
+            at #{question.timestamp} says
+          %br/
+          = question.question
