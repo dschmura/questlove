@@ -23,6 +23,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :questions, dependent: :destroy
+  has_many :panels
 
   def user_name
     email.split('@')[0]
