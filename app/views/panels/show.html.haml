@@ -17,23 +17,23 @@
   .ask_a_question.col-xs
     This is where you ask a new question
     = form_for @question do |f|
-      - if @question.errors.any?
-        #error_explanation
-          %h2= "#{pluralize(@question.errors.count, "error")} prohibited this question from being saved:"
-          %ul
-            - @question.errors.full_messages.each do |msg|
-              %li= msg
-      .field
-        = f.label :question
-        = f.text_area :question
-      .actions
-        = f.submit 'Save'
+      .form-inline
+        - if @question.errors.any?
+          #error_explanation
+            %h2= "#{pluralize(@question.errors.count, "error")} prohibited this question from being saved:"
+            %ul
+              - @question.errors.full_messages.each do |msg|
+                %li= msg
+        .field
+          = f.label :question
+          = f.text_area :question
+        .actions
+          = f.submit 'Save'
 
 .row
   .pending_questions.col-xs
     List of questions PENDING
-    -# - @questions.each do |q|
-    -#   = q.question
+    = render @panel.questions
   .approved_questions.col-xs
     List of questions approved by the moderator
   
@@ -41,4 +41,5 @@
 = link_to 'Edit', edit_panel_path(@panel)
 \|
 = link_to 'Back', panels_path
+
 
