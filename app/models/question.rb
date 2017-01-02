@@ -33,6 +33,6 @@ class Question < ApplicationRecord
   end
 
   def timestamp
-    created_at.strftime('%H:%M:%S %d %B %Y')
+    created_at.strftime('%l:%M:%S %p')
   end
 end

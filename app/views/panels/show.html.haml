@@ -38,10 +38,27 @@
     = render @panel.questions
 
   .approved_questions.col-xs
-    List of questions approved by the moderator
-    %ul
+    List of questions APPROVED by the moderator
     - @approved_questions.each do |q|
-      %li= q.question
+      .card
+        .card-block
+          .row
+            .col-md-12
+              %p.card-text
+                %span.text-muted
+                  = q.user.user_name
+                  asked:
+     
+                  = q.question
+                  %br 
+                  
+                  Vote count:
+                  = q.votes.count
+                  %br
+                  Asked at:
+                  = q.timestamp
+                
+                
   
 .row
   .answered_questions.col-xs
