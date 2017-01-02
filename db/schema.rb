@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170101182512) do
+ActiveRecord::Schema.define(version: 20161229161053) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +42,7 @@ ActiveRecord::Schema.define(version: 20170101182512) do
     t.integer  "status",     default: 0
     t.integer  "panel_id"
     t.index ["panel_id"], name: "index_questions_on_panel_id", using: :btree
+
     t.index ["user_id"], name: "index_questions_on_user_id", using: :btree
   end
 
@@ -61,6 +63,7 @@ ActiveRecord::Schema.define(version: 20170101182512) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+
   create_table "votes", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "question_id"
@@ -73,6 +76,7 @@ ActiveRecord::Schema.define(version: 20170101182512) do
   add_foreign_key "panel_questions", "panels"
   add_foreign_key "panel_questions", "questions"
   add_foreign_key "questions", "panels"
+
   add_foreign_key "questions", "users"
   add_foreign_key "votes", "questions"
   add_foreign_key "votes", "users"

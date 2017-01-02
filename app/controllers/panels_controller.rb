@@ -15,6 +15,10 @@ class PanelsController < ApplicationController
     @question = Question.new
     @panel = Panel.includes(:questions).find_by(id: params[:id])
     @vote = Vote.new()
+    @pending_questions = Question.pending
+    @approved_questions = Question.approved
+    @answered_questions = Question.answered
+
   end
 
   # GET /panels/new
@@ -71,7 +75,7 @@ class PanelsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_panel
-      @panel = Panel.find(params[:id])
+      @panel = Panel.includes(:panel_questions).find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
