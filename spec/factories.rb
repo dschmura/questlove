@@ -1,4 +1,8 @@
 FactoryGirl.define do
+  factory :vote do
+    user nil
+    question nil
+  end
   factory :panel do
     name "MyString"
     description "MyText"
