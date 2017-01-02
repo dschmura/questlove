@@ -12,11 +12,10 @@ users = User.create([
     {email: 'moderator@user.com', password: 'moderator', password_confirmation: 'moderator'}, 
     {email: 'presenter@user.com', password: 'presenter', password_confirmation: 'presenter'} ])
 
-  20.times do |q|
-    Question.create(question: "#{FFaker::Lorem.sentence}?", user: User.find_by(email: 'attendee@user.com'))
-  end
+5.times do |q|
+  Panel.create(name: "#{FFaker::Movie.title}?", description: "#{FFaker::HipsterIpsum.paragraph}?", rules: "#{FFaker::HipsterIpsum.paragraph}?", moderator: User.find_by(email: "moderator@user.com"))
+end
 
-
-  5.times do |q|
-    Panel.create(name: "#{FFaker::Movie.title}?", description: "#{FFaker::HipsterIpsum.paragraph}?", rules: "#{FFaker::HipsterIpsum.paragraph}?", moderator: User.find_by(email: "moderator@user.com"))
-  end
+5.times do |q|
+  Question.create(question: "#{FFaker::Lorem.sentence}?", user: User.find_by(email: 'attendee@user.com'), status: 'pending', panel_id: Panel.first)
+end

@@ -14,7 +14,7 @@
 class Question < ApplicationRecord
   belongs_to :user
   belongs_to :panel
-
+  has_many :votes
   enum status:  [:pending, :approved, :answered, :deferred]
 
   ## Question status 'scopes'

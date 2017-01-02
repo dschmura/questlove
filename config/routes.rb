@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :panels
+  resources :panels do
+    resources :questions
+  end
   devise_for :users
   root to: 'pages#index'
   get 'pages/index'
