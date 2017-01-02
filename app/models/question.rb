@@ -7,11 +7,14 @@
 #  user_id    :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  panel_id   :integer
 #  status     :integer          default("pending")
 #
 
 class Question < ApplicationRecord
   belongs_to :user
+  belongs_to :panel
+
   enum status:  [:pending, :approved, :answered, :deferred]
 
   ## Question status 'scopes'
@@ -29,4 +32,7 @@ class Question < ApplicationRecord
     where(status: 'deferred')
   end
 
+  def timestamp
+    created_at.strftime('%H:%M:%S %d %B %Y')
+  end
 end

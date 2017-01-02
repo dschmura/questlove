@@ -1,6 +1,6 @@
 class PanelsController < ApplicationController
   before_action :set_panel, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /panels
   # GET /panels.json
   def index
@@ -13,9 +13,12 @@ class PanelsController < ApplicationController
   def show
     @users = User.all
     @question = Question.new
+    @panel = Panel.includes(:questions).find_by(id: params[:id])
+    @vote = Vote.new()
     @pending_questions = Question.pending
     @approved_questions = Question.approved
     @answered_questions = Question.answered
+
   end
 
   # GET /panels/new

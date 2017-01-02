@@ -19,11 +19,16 @@
 @import 'normalize-rails';
 @import "bourbon";
 @import "font-awesome";
+@import "custom";
 @import 'pages';
 @import 'panels';
 @import 'questions';
-@import "custom";
+
+
 
 // Custom bootstrap variables must be set or imported before bootstrap itself.
 @import "bootstrap";
 
+.content{
+  margin-top: 80px;
+}

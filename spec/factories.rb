@@ -1,6 +1,7 @@
 FactoryGirl.define do
-  factory :panel_question do
-    panel nil
+
+  factory :vote do
+    user nil
     question nil
   end
 
@@ -12,7 +13,8 @@ FactoryGirl.define do
   end
   factory :question do
     question "MyString"
-    user 1
+    association :user, factory: :user
+    status 'pending'
   end
   factory :user do
     email 'attendee@user.com'

@@ -12,5 +12,12 @@
 #
 
 class Panel < ApplicationRecord
-  has_many :panel_questions
+
+  validates :name, :description, :moderator,  presence: true
+  belongs_to :user 
+  has_many :questions
+  def moderator_name(moderator_id)
+    User.find_by(id: moderator_id).user_name
+  end
+
 end

@@ -66,11 +66,11 @@ class QuestionsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_question
-      @question = Question.find(params[:id])
+      @question = Question.includes(:votes).find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def question_params
-      params.require(:question).permit(:question)
+      params.require(:question).permit(:question, :panel_id)
     end
 end

@@ -1,0 +1,29 @@
+.card
+  .card-block
+    .row
+      .col-md-12
+        %p.card-text
+          %span.text-muted
+            = question.user.user_name
+            at #{question.timestamp} says
+          %br/
+          = question.question
+          %br 
+          Question ID: 
+          = question.id
+          = question.votes.count
+          = link_to "+1 Vote", new_question_vote_path(question), method: :post
+
+          = form_for @question do |f|
+            .form-inline
+              - if @question.errors.any?
+                #error_explanation
+                  %h2= "#{pluralize(@question.errors.count, "error")} prohibited this question from being saved:"
+                  %ul
+                    - @question.errors.full_messages.each do |msg|
+                      %li= msg
+              .field
+                = f.select :status, options_for_select([["Pending", "pending"], ["Approved", "approved"], ["Rejected", "rejected"]])
+                = f.hidden_field :panel_id, value: @panel.id
+              .actions
+                = f.submit 'Save'

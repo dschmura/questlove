@@ -1,15 +1,15 @@
 # == Schema Information
 #
-# Table name: panel_questions
+# Table name: votes
 #
 #  id          :integer          not null, primary key
-#  panel_id    :integer
+#  user_id     :integer
 #  question_id :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
 
-class PanelQuestion < ApplicationRecord
-  belongs_to :panel
+class Vote < ApplicationRecord
+  belongs_to :user
   belongs_to :question
 end

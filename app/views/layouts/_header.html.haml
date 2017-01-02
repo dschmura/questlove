@@ -1,19 +1,19 @@
 %header
   %nav.navbar.navbar-fixed-top.navbar-dark.bg-inverse
-    .container
-      = link_to "QuestLove", root_path, class: 'navbar-brand' 
-      %ul.nav.navbar-nav
-        %li.nav-item.active
-          %a.nav-link{:href => "#"} Home
-        .flex-items-xs-right
-          %li.nav-item= link_to "About", pages_about_path
-          %li.nav-item= link_to "Contact Us", pages_contact_path
-          %li.nav-item= link_to "Privacy", pages_privacy_path
-        - if user_signed_in?
-          %li
-            = link_to("Logout #{current_user.email}", destroy_user_session_path, :method => :delete)
-        - else
-          %li
-            = link_to('Login', new_user_session_path)
-    / /.container
+
+    = link_to "QuestLove", root_path, class: 'navbar-brand' 
+    %ul.nav.navbar-nav
+      %li.nav-item.active
+        %a.nav-link{:href => "#"} Home
+      .flex-items-xs-right.right_nav
+        %li.nav-item= link_to "About", pages_about_path
+        %li.nav-item= link_to "Contact Us", pages_contact_path
+
+      - if user_signed_in?
+        %li
+          = link_to("Logout #{current_user.user_name}", destroy_user_session_path, :method => :delete)
+      - else
+        %li
+          = link_to('Login', new_user_session_path)
+  / /.container
 
