@@ -23,7 +23,7 @@
                     - @question.errors.full_messages.each do |msg|
                       %li= msg
               .field
-                = f.select :status, options_for_select([["Pending", "pending"], ["Approved", "approved"], ["Rejected", "rejected"]])
+                = f.select :status, options_for_select([["Pending", "pending"], ["Approved", "approved"], ["Answered", "answered"], ["Deferred", "deferred"]])
                 = f.hidden_field :panel_id, value: @panel.id
               .actions
                 = f.submit 'Save'
