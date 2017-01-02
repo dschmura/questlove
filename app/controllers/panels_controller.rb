@@ -13,6 +13,8 @@ class PanelsController < ApplicationController
   def show
     @users = User.all
     @question = Question.new
+    @panel = Panel.includes(:questions).find_by(id: params[:id])
+    @vote = Vote.new()
   end
 
   # GET /panels/new
